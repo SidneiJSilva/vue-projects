@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    loading: false,
     logged: false,
     user: {
       email: '',
@@ -25,21 +26,27 @@ export default new Vuex.Store({
     setLoginError (state, payload) {
       state.loginErrors.code = payload.errorCode
       state.loginErrors.message = payload.errorMessage
+    },
+    setLoading (state, payload) {
+      state.loading = payload
     }
   },
   actions: {
     login ({ commit }, payload) {
       const auth = getAuth()
+      commit('setLoading', true)
       signInWithEmailAndPassword(auth, payload.email, payload.passwd)
         .then((userCredential) => {
           const user = userCredential.user
           user.status = true
           commit('setUser', user)
+          commit('setLoading', false)
         })
         .catch((error) => {
           const errorCode = error.code
           const errorMessage = error.message
           commit('setLoginError', { errorCode: errorCode, errorMessage: errorMessage })
+          commit('setLoading', false)
         })
     },
     createUser ({ commit }, payload) {

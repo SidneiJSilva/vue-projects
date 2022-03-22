@@ -1,16 +1,18 @@
 <template>
   <div class="page_calc">
-    <div class="container_calc">
-      <div class="space"></div>
-      <div class="screen">{{ screen }}</div>
-      <div class="space"></div>
-    </div>
-    <div class="container_calc">
-      <div v-for="btn in btns" :key="btn"
-        class="btn"
-        :style="btn === '=' || btn === '<= DELETE' ? 'width: 40%' : ''"
-        @click="calc(btn)">
-        {{ btn }}
+    <div class="container_geral">
+      <div class="container_calc">
+        <div class="space"></div>
+        <div class="screen">{{ screen }}</div>
+        <div class="space"></div>
+      </div>
+      <div class="container_calc">
+        <div v-for="btn in btns" :key="btn"
+          class="btn"
+          :style="btn === '=' || btn === '<= DELETE' ? 'width: 40%' : ''"
+          @click="calc(btn)">
+          {{ btn }}
+        </div>
       </div>
     </div>
   </div>

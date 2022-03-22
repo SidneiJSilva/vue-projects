@@ -6,6 +6,12 @@
         aria-labelledby="modalTitle"
         aria-describedby="modalDescription"
       >
+        <BounceLoader
+          v-if="loading"
+          class="spinner"
+          color="#99f2c8"
+          size="100" />
+
         <header
           class="modal-header"
           id="modalTitle"
@@ -44,6 +50,7 @@
             class="btn-login"
             @click="myLogin">ACESSAR</div>
         </footer>
+        
       </div>
     </div>
   </transition>
@@ -62,7 +69,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['logged', 'user'])
+    ...mapState(['logged', 'user', 'loading'])
   },
   methods: {
     ...mapActions(['logout', 'login']),

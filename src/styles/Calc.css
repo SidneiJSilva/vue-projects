@@ -1,5 +1,12 @@
 .page_calc {
   padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container_geral {
+  width: 60vw;
 }
 
 .container_calc {
@@ -7,7 +14,6 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .btn {
@@ -17,7 +23,7 @@
   padding: 5px 10px;
   margin: 0px 10px;
   border-radius: 25px;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1.5%;
   box-shadow: -1px 4px 9px 0px rgba(0,0,0,0.83);
   cursor: pointer;
