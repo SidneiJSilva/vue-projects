@@ -1,0 +1,68 @@
+.cloud {
+  margin-left: 1rem;
+  color: var(--color);
+}
+
+.body {
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: #fff;
+}
+
+.container_header {
+  display: flex;
+  flex-direction: row;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.container_table_header {
+  background-color: #1f4037;
+  padding: .5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.item {
+  width: 25%;
+  text-align: left;
+}
+
+.item_value {
+  width: 25%;
+  text-align: right;
+}
+
+.nav {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+}
+
+.nav div {
+  align-items: center;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.nav div:hover {
+  color: #20c997;
+}
+
+.active {
+  color: #20c997;
+}
