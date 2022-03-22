@@ -3,6 +3,7 @@
     :placeholder="placeholder"
     @input="val => $emit('input', val.target.value)"
     :value="value"
+    :type="type"
     >
 </template>
 
@@ -10,7 +11,8 @@
 export default {
   props: {
     value: {},
-    placeholder: {}
+    placeholder: {},
+    type: { type: String, default: 'text' }
   }
 }
 </script>
