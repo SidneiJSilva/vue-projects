@@ -10,38 +10,39 @@
           class="modal-header"
           id="modalTitle"
         >
-          <div v-if="logged">DADOS</div>
+          <div v-if="logged">DADOS DO UTILIZADOR</div>
           <div v-else>LOGIN</div>
+          <div class="btn-close" @click="myClose()">X</div>
         </header>
 
-        <div
-          class="modal-body"
-        >
-          <input-field
-            class="input"
-            v-model="user.email"
-            placeholder="Email"  
-          />
-          <input-field 
-            class="input"
-            v-model="user.passwd"
-            placeholder="Senha"  
-          />
-          <!-- USER {{ user }} -->
+        <div class="modal-body">
+          <template v-if="logged">
+            <div class="info">Logado como <span>{{ user.email }}</span></div>
+          </template>
+          <template v-else>
+            <input-field
+              class="input"
+              v-model="input_user.email"
+              placeholder="Email"  
+            />
+            <input-field 
+              class="input"
+              v-model="input_user.passwd"
+              placeholder="Senha"
+              type="password"
+            />
+          </template>
         </div>
 
         <footer class="modal-footer">
-          <slot name="footer">
-            This is the default footer!
-          </slot>
-          <button
-            type="button"
-            class="btn-green"
-            @click="close"
-            aria-label="Close modal"
-          >
-            Close me!
-          </button>
+          <div
+            v-if="logged"
+            class="btn-logout"
+            @click="logout">LOGOUT</div>
+          <div
+            v-else
+            class="btn-login"
+            @click="myLogin">ACESSAR</div>
         </footer>
       </div>
     </div>
@@ -49,27 +50,48 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   data() {
     return {
-      user: {
+      input_user: {
         email: '',
         passwd: ''
       }
     }
   },
   computed: {
-    ...mapState(['logged'])
+    ...mapState(['logged', 'user'])
   },
   methods: {
+    ...mapActions(['logout', 'login']),
+    myClose () {
+      const self = this
+      self.input_user.email = ''
+      self.input_user.passwd = ''
+      self.$emit('close')
+    },
+    myLogin () {
+      const self = this
+      self.login(self.input_user)
+      self.input_user.email = ''
+      self.input_user.passwd = ''
+    },
     close() {
       this.$emit('close')
     }
   },
   components: {
     'input-field': () => import('@/components/Custom/InputField.vue')
+  },
+  watch: {
+    logged (value) {
+      if (value) {
+        const self = this
+        self.myClose()
+      }
+    }
   }
 }
 </script>
