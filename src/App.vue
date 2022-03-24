@@ -61,7 +61,6 @@ export default {
 }
 </script>
 
-
-<style>
+<style scoped>
 @import './styles/App.css';
 </style>
