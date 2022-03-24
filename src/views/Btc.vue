@@ -106,6 +106,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import './../styles/Btc.css';
 </style>
