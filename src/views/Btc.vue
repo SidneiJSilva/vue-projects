@@ -8,7 +8,7 @@
         <div class="item_value">Última</div>
       </div>
       <div v-for="(item, index) in data" :key="index"
-        class="container"
+        class="container-btc"
         :style="data.length === 1 ? 'padding-top: .5rem; padding-bottom: .5rem; border-radius: 0px 0px 10px 10px;' :
         index === data.length - 1 ? 'border-radius: 0px 0px 10px 10px; padding-bottom: .5rem;' :
         index === 0 ? 'padding-top: .5rem;' : ''">
