@@ -1,5 +1,5 @@
 .home {
-  width: 100vw;
+  width: 100%;
   height: 300vh;
 }
 
@@ -10,7 +10,7 @@
 
 .parallax {
   /* The image used */
-  background-image: url("./../assets/back_tech.png");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/vue-projects-66740.appspot.com/o/home%2Fback_tech.png?alt=media&token=333ca08e-b25c-49ca-813a-25ee66a38a6d");
 
   /* Set a specific height */
   min-height: 400px; 
@@ -28,14 +28,31 @@
   padding: 10px;
 }
 
+.block-btc {
+  height: 420px;
+  background-color: #000101;
+}
+
 .calc-img {
   height: 420px;
   border-radius: 90px;
 }
 
+.btc-img {
+  height: 420px;
+}
+
 .title-home {
   color: #42b983;
   text-align: right;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.title-home-left {
+  color: #fed901;
+  text-align: left;
   font-weight: bold;
   font-size: 2rem;
   width: 100%;
@@ -54,6 +71,13 @@
   font-size: 1.5rem;
 }
 
+.my-text-left {
+  width: 90%;
+  color: #eaa601;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
 .calculator-icon {
   background-color: #fff;
   color: #42b983;
@@ -61,6 +85,21 @@
   border-radius: 90px;
   cursor: pointer;
   transition: .4s;
+}
+
+.btc-icon {
+  color: red;
+  width: 70px;
+  border-radius: 90px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.btc-icon:hover {
+  background-color: #fff;
+  color: #eaa601;
+  width: 70px;
+  border-radius: 90px;
 }
 
 .calculator-icon:hover {
@@ -84,6 +123,13 @@
 
 .indicator-text {
   color: #42b983;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  margin-right: .5rem;
+}
+
+.indicator-text-btc {
+  color: #eaa601;
   font-weight: bolder;
   font-size: 1.2rem;
   margin-right: .5rem;

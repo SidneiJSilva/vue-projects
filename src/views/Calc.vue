@@ -1,5 +1,10 @@
 <template>
   <div class="page_calc">
+    <div class="calc-container">
+      <div v-for="(item, index) in list" :key="index">
+        <div class="row-list">{{ item }}</div>
+      </div>
+    </div>
     <div class="container_geral">
       <div class="container_calc">
         <div class="space"></div>
@@ -24,6 +29,7 @@ export default {
     return {
       btns: [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', 'C', '/', '=', '<= DELETE'],
       screen: '',
+      list: [],
       values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
       operators: ['+', '-', '*', '/']
     }
@@ -109,6 +115,8 @@ export default {
           }
         }
       }
+      if (self.list.length > 5) self.list.splice(0, 1)
+      self.list.push(`${self.screen} = ${res}`)
       self.screen = res
     }
   },
