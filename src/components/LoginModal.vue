@@ -23,7 +23,8 @@
 
         <div class="modal-body">
           <template v-if="logged">
-            <div class="info">Logado como <span>{{ user.email }}</span></div>
+            <div class="info">Logado como</div>
+            <div class="info-span"><span>{{ user.email }}</span></div>
           </template>
           <template v-else>
             <input-field

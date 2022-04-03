@@ -85,23 +85,72 @@ export default new Vuex.Store({
     },
     checkData ({ commit }) {
       const db = getDatabase();
-      const starCountRef = ref(db, 'hash/');
+      const starCountRef = ref(db, 'hash/')
       onValue(starCountRef, (snapshot) => {
-        const data = snapshot.val();
+        const data = snapshot.val()
         commit('updateBoxes', data)
       });
     },
     updateBox ({ commit }, payload) {
       console.log(commit)
-      const db = getDatabase();
+      const db = getDatabase()
 
-      const round = {};
-      round['hash/' + payload.key] = payload.value;
-      update(ref(db), round);
+      const round = {}
+      round['hash/' + payload.key] = payload.value
+      update(ref(db), round)
 
       const last = {};
-      last['hash/last_move'] = payload.value.uuid;
-      update(ref(db), last);
+      last['hash/last_move'] = payload.value.uuid
+      update(ref(db), last)
+    },
+    newGame () {
+      const db = getDatabase()
+
+      const boxes = {
+        box1: {
+          email: '',
+          uuid: ''
+        },
+        box2: {
+          email: '',
+          uuid: ''
+        },
+        box3: {
+          email: '',
+          uuid: ''
+        },
+        box4: {
+          email: '',
+          uuid: ''
+        },
+        box5: {
+          email: '',
+          uuid: ''
+        },
+        box6: {
+          email: '',
+          uuid: ''
+        },
+        box7: {
+          email: '',
+          uuid: ''
+        },
+        box8: {
+          email: '',
+          uuid: ''
+        },
+        box9: {
+          email: '',
+          uuid: ''
+        }
+      }
+      const payload = {}
+      payload['hash/'] = boxes
+      update(ref(db), payload)
+
+      const last = {};
+      last['hash/last_move'] = ''
+      update(ref(db), last)
     }
   },
   modules: {

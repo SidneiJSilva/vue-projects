@@ -32,4 +32,82 @@
   align-items: center;
   display: flex;
   flex-direction: row;
+  user-select: none;
+}
+
+.winner {
+  width: 20vw;
+}
+
+.winner-img {
+  width: 20vw;
+}
+
+.new-game {
+  width: 20vw;
+  background-color: aquamarine;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: -1px 4px 9px 0px rgba(100,100,100,0.83);
+  user-select: none;
+  cursor: pointer;
+}
+
+.blink {
+  width: 8vw;
+  height: 15vh;
+  font-size: 7vh;
+  color: green;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 1.5%;
+  box-shadow: -1px 4px 9px 0px rgba(0,0,0,0.83);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  background-color: rgba(255,255,0,1);
+  animation: blink 0.3s linear infinite;
+}
+
+.blink_lose {
+  width: 8vw;
+  height: 15vh;
+  font-size: 7vh;
+  color: yellow;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 1.5%;
+  box-shadow: -1px 4px 9px 0px rgba(0,0,0,0.83);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  background-color: rgba(255, 0, 03,1);
+  animation: blink 0.3s linear infinite;
+}
+
+@keyframes blink {
+  0%{opacity: 0;}
+  25%{opacity: .5;}
+  50%{opacity: 1;}
+  75%{opacity: .5;}
+  100%{opacity: 0;}
+}
+
+.result {
+  color: #42b983;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
