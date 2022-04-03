@@ -1,0 +1,35 @@
+.container-hash {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hash {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  flex-wrap: wrap;
+}
+
+.box-hash {
+  width: 8vw;
+  height: 15vh;
+  font-size: 7vh;
+  background-color: #42b983;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 1.5%;
+  box-shadow: -1px 4px 9px 0px rgba(0,0,0,0.83);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}

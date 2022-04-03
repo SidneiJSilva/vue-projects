@@ -10,6 +10,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/btc">BTC</router-link>
         <router-link to="/calc">Calculadora</router-link>
+        <router-link v-if="logged" to="/hash">Hash Game</router-link>
         <router-link to="/about">Sobre</router-link>
         <account class="account" :size="40" @click="open_login_modal = true" />
       </div>
@@ -37,7 +38,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import Account from 'vue-material-design-icons/Account.vue';
 export default {
   data () {
@@ -45,18 +46,22 @@ export default {
       open_login_modal: false
     }
   },
+  computed: {
+    ...mapState(['user', 'logged'])
+  },
   components: {
     Account,
     modal: () => import('@/components/LoginModal.vue')
   },
   methods: {
-    ...mapActions(['login', 'checkUser', 'logout']),
+    ...mapActions(['login', 'checkUser', 'logout', 'checkData']),
   },
   mounted () {
     const self = this
     // self.login({ email: 'tjsidnei@gmail.com', passwd: '1q2w3e' })
     // self.logout()
     self.checkUser()
+    self.checkData()
   }
 }
 </script>

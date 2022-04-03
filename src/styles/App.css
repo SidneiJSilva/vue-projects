@@ -75,7 +75,8 @@
 }
 
 .nav a.router-link-exact-active {
-  text-decoration: underline;
+  color: #42b983;
+  text-shadow: 0px 0px 8px #fff;
 }
 
 .header {

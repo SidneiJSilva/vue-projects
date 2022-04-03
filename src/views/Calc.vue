@@ -14,7 +14,7 @@
       <div class="container_calc">
         <div v-for="btn in btns" :key="btn"
           class="btn"
-          :style="btn === '=' || btn === '<= DELETE' ? 'width: 40%' : ''"
+          :style="btn === '=' || btn === '<=' ? 'width: 40%' : ''"
           @click="calc(btn)">
           {{ btn }}
         </div>
@@ -27,7 +27,7 @@
 export default {
   data () {
     return {
-      btns: [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', 'C', '/', '=', '<= DELETE'],
+      btns: [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', 'C', '/', '=', '<='],
       screen: '',
       list: [],
       values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
@@ -39,7 +39,7 @@ export default {
       const self = this
       if (value === 'C') {
         self.screen = ''
-      } else if (value === '<= DELETE') {
+      } else if (value === '<=') {
         let newValue = ''
         for (let key in self.screen) {
           let char = self.screen[key]

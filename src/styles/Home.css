@@ -35,18 +35,20 @@
 
 .calc-img {
   height: 420px;
+  max-width: 50vw;
   border-radius: 90px;
 }
 
 .btc-img {
   height: 420px;
+  max-width: 50vw;
 }
 
 .title-home {
   color: #42b983;
   text-align: right;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5vw;
   width: 100%;
   margin-bottom: 2rem;
 }
@@ -68,14 +70,14 @@
   width: 90%;
   padding-left: 10%;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: 1.6vw;
 }
 
 .my-text-left {
   width: 90%;
   color: #eaa601;
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.6vw;
 }
 
 .calculator-icon {

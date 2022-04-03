@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth"
+import { getDatabase, ref, onValue, update } from "firebase/database";
 
 Vue.use(Vuex)
 
@@ -15,9 +16,13 @@ export default new Vuex.Store({
     loginErrors: {
       code: '',
       message: ''
-    }
+    },
+    boxes: {}
   },
   mutations: {
+    updateBoxes (state, payload) {
+      state.boxes = payload
+    },
     setUser (state, payload) {
       state.logged = payload.status
       state.user.email = payload.email
@@ -66,13 +71,7 @@ export default new Vuex.Store({
       const auth = getAuth()
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
           commit('setUser', { email: user.email, uid: user.uid, status: true })
-          // ...
-        } else {
-          // User is signed out
-          // ...
         }
       })
     },
@@ -81,9 +80,28 @@ export default new Vuex.Store({
       signOut(auth).then(() => {
         commit('setUser', { email: '', uid: '', status: false })
       }).catch((error) => {
-        // An error happened.
         console.log(error)
       });
+    },
+    checkData ({ commit }) {
+      const db = getDatabase();
+      const starCountRef = ref(db, 'hash/');
+      onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        commit('updateBoxes', data)
+      });
+    },
+    updateBox ({ commit }, payload) {
+      console.log(commit)
+      const db = getDatabase();
+
+      const round = {};
+      round['hash/' + payload.key] = payload.value;
+      update(ref(db), round);
+
+      const last = {};
+      last['hash/last_move'] = payload.value.uuid;
+      update(ref(db), last);
     }
   },
   modules: {
