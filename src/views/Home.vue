@@ -9,7 +9,7 @@
       <div class="container">
         <img class="calc-img" src="https://firebasestorage.googleapis.com/v0/b/vue-projects-66740.appspot.com/o/home%2Fcalc.png?alt=media&token=fd3304d7-9dc0-4cf9-a2c5-d39ea6590048"
           alt="calculadora">
-        <div class="info">
+        <div class="">
           <div class="title-home">Eu também sofria com esse problema, e agora?</div>
           <div class="my-text">Se você também é daqueles que tem imensa dificuldade de fazer contas de cabeça, seus problemas acabaram. Esta calculadora feita em Vue faz as contas para você.<br><br>Escreva as operações sequencialmente em uma única fila que ela te dá o resultado. Não deixe de experimentar.<br><br>Sua vida será facilitada como nunca imaginaste antes.</div>
           <div class="container-home">
@@ -27,7 +27,7 @@
 
     <div class="block-btc">
       <div class="container">
-        <div class="info">
+        <div class="">
           <div class="title-home-left">Chegou a hora de investir!</div>
           <div class="my-text-left">O mercado de criptomoedas não para de crescer. Quem surfa nessa onda desde o início está milionário agora.<br><br>Quer ser o próximo milionário? Comece hoje mesmo a investir em criptos e mude seu futuro!</div>
           <div>&nbsp;</div>
