@@ -29,6 +29,16 @@ Vue.use(VueRouter)
     path: '/hash',
     name: 'Hash',
     component: () => import(/* webpackChunkName: "about" */ '../views/Hash.vue')
+  },
+  {
+    path: '/slideshow',
+    name: 'Slideshow',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Slideshow.vue')
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue')
   }
 ]
 

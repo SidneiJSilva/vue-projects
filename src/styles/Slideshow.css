@@ -1,0 +1,17 @@
+.slideshow_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item {
+  width: 45%;
+  margin: 20px;
+  position: relative;
+}
+
+.item .urls {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+}
